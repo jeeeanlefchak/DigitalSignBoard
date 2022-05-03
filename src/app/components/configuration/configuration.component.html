@@ -1,0 +1,44 @@
+<div id="home">
+  <div class="form">
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Texto</mat-label>
+      <input matInput type="text" [(ngModel)]="text">
+      <button *ngIf="text" matSuffix mat-icon-button aria-label="Clear" (click)="text=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Cor da Letra #HEX</mat-label>
+      <input matInput [ngxMatColorPicker]="fontPicker" [(ngModel)]="fColor">
+      <ngx-mat-color-toggle matSuffix [for]="fontPicker"></ngx-mat-color-toggle>
+      <ngx-mat-color-picker #fontPicker [touchUi]="false" [color]="color"></ngx-mat-color-picker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Cor de Fundo #HEX</mat-label>
+      <input matInput [ngxMatColorPicker]="bkgPicker" [(ngModel)]="bkgColor">
+      <ngx-mat-color-toggle matSuffix [for]="bkgPicker"></ngx-mat-color-toggle>
+      <ngx-mat-color-picker #bkgPicker [touchUi]="false" [color]="color">
+      </ngx-mat-color-picker>
+    </mat-form-field>
+    <!-- <mat-form-field> -->
+    <mat-form-field>
+      <mat-label>Velocidade</mat-label>
+      <input matInput [(ngModel)]="velocity">
+      <mat-slider class="example-margin w-100" [max]="5" [min]="0.3" [thumbLabel]="true" [(ngModel)]="velocity"
+        aria-labelledby="example-name-label">
+      </mat-slider>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>tamanho da fonte</mat-label>
+      <input matInput [(ngModel)]="size">
+      <mat-slider class="example-margin w-100" [max]="5" [min]="0.3" [thumbLabel]="true" [(ngModel)]="size"
+        aria-labelledby="example-name-label">
+      </mat-slider>
+    </mat-form-field>
+    <!-- </mat-form-field> -->
+  </div>
+  <div class="center-items w-100 footer">
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Confirmar</button>
+  </div>
+</div>
