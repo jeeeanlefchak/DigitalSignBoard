@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { RouterModule, Routes } from '@angular/router';
 import { ConfigurationComponent, ConfigurationModule } from 'src/app/components/configuration/configuration.component';
@@ -7,14 +7,15 @@ import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public shared: SharedService) { }
 
   ngOnInit(): void {
-    this.openDialog();
+    // this.openDialog();
   }
 
   openDialog() {

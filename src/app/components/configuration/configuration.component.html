@@ -24,21 +24,21 @@
     <mat-form-field>
       <mat-label>Velocidade</mat-label>
       <input matInput [(ngModel)]="velocity">
-      <mat-slider class="example-margin w-100" [max]="5" [min]="0.3" [thumbLabel]="true" [(ngModel)]="velocity"
+      <mat-slider class="example-margin w-100" [max]="10" [min]="1" [thumbLabel]="true" [(ngModel)]="velocity"
         aria-labelledby="example-name-label">
       </mat-slider>
     </mat-form-field>
     <mat-form-field>
       <mat-label>tamanho da fonte</mat-label>
       <input matInput [(ngModel)]="size">
-      <mat-slider class="example-margin w-100" [max]="5" [min]="0.3" [thumbLabel]="true" [(ngModel)]="size"
+      <mat-slider class="example-margin w-100" [max]="10" [min]="1" [thumbLabel]="true" [(ngModel)]="size"
         aria-labelledby="example-name-label">
       </mat-slider>
     </mat-form-field>
     <!-- </mat-form-field> -->
   </div>
   <div class="center-items w-100 footer">
-    <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+    <button mat-raised-button color="warn" (click)="onCancel()" >Cancelar</button>
     <button mat-raised-button color="primary" (click)="onSubmit()">Confirmar</button>
   </div>
 </div>

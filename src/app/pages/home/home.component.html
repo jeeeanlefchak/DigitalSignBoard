@@ -1,4 +1,10 @@
-<div (click)="openDialog()" [style.background-color]="shared.model?.backGroundColor"
+<!-- <div class="h-100 target" (click)="openDialog()" [style.background-color]="shared.model?.backGroundColor"
   [style.color]="shared.model?.fontColor">
   texto
+</div> -->
+<div (click)="openDialog()" [style.background-color]="shared.model?.backGroundColor"
+  [style.color]="shared.model?.fontColor" class="main">
+  <div id="pot" [style.-webkit-animation-duration]=" shared.model?.velocity+ 's'" [style.font-size]="shared.model.size + 'rem'">
+    {{shared.model?.text ? shared.model?.text : "Texto"}}
+  </div>
 </div>

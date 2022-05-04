@@ -1,15 +1,18 @@
 import { Color, MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import { CommonModule } from '@angular/common';
-import { Component, NgModule, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, NgModule, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { ThemePalette } from '@angular/material/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { Model } from 'src/app/models/mode';
 import { SharedService } from 'src/app/services/shared.service';
+import {MatDialog} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-configuration',
   templateUrl: './configuration.component.html',
@@ -23,7 +26,7 @@ export class ConfigurationComponent implements OnInit {
   fColor: any;
   color: ThemePalette = 'primary';
   size: number = 1;
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     if (this.sharedService.model) {
@@ -49,10 +52,11 @@ export class ConfigurationComponent implements OnInit {
     model.text = this.text;
     model.size = this.size;
     this.sharedService.setModel(model);
+    this.onCancel();
   }
 
   onCancel() {
-
+    this.dialog.closeAll();
   }
 
   hexToRgb(hex?: any) {

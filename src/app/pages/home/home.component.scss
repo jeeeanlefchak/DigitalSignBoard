@@ -1,0 +1,53 @@
+app-home {
+  // .target {
+  //   animation-name: rightToLeft;
+  //   animation-duration: 4.5s;
+  //   animation-timing-function: linear;
+  //   animation-iteration-count: infinite; 
+  //   /* animation: rightToLeft 4.5s linear infinite; */
+  // }
+
+  //   @keyframes rightToLeft {
+  //       0% {
+  //           transform: translateX(200px);
+  //       }
+
+  //       100% {
+  //           transform: translateX(-160px);
+  //       }
+  //   }
+
+  .main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    //transform: rotate(90deg);
+  }
+ 
+  #pot {
+    white-space: nowrap !important;
+    position: absolute;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+   // -webkit-animation-duration: 5s;
+  }
+  @keyframes run {
+    0% {
+      left: calc(100%);   
+    }
+    50% { 
+      //left: calc(100% - 100px); 
+     }
+    100% {
+      left: 0;
+    }
+  }
+
+}
