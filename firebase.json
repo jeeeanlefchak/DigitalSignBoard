@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/letreiro-digital",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
